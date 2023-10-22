@@ -1,7 +1,14 @@
-const age = 25;
+// const age = 25;
+// console.assert(age >= 18, 'You must be 18 or older to access this content');
 
-console.assert(age >= 18, 'You must be 18 or older to access this content');
+// console.assert(1 === 1.1);
 
-// If the condition is false, it will log the error message
 
-console.log("Hello Andrew!")
+// FUNCTION IMPLEMENTATION
+const sum = function(a, b) { 
+  return a + b;
+}
+
+// TEST CODE
+console.assert(sum(1, 2) === 3);
+console.assert(sum(1, 20) === 3); // bad / incorrect assertion, and we see it fail!
