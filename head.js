@@ -11,13 +11,11 @@ const assertEqual = function(actual, expected) {
 // assertEqual(1, 2);
 
 
-let fruitsArray = ["Apple", "Orange", "Banana"];
-let emptyArray = [];
 function head (array) {
   return array[0];
 }
-console.log(head(fruitsArray));
-assertEqual(head(fruitsArray), "Apple");
+console.log(head(["Apple", "Banana", "Orange"]), "Apple");
+assertEqual(head(["Apple", "Banana", "Orange"]), "Apple");
 assertEqual(head([5,6,7]), 5);
 assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head(emptyArray), undefined);
+assertEqual(head([]), undefined);
