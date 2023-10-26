@@ -26,24 +26,21 @@ const middle = function(array) {
     return newArray;
   }
   else if (array.length % 2 === 0) {
-    newArray.push((array.length / 2));
-    newArray.push((array.length / 2) + 1);
+    let middleIndex = array.length / 2;
+    newArray.push(array[middleIndex - 1]);
+    newArray.push((array[middleIndex]));
   }
   else {
-    newArray.push(Math.ceil(array.length / 2));
+    newArray.push(array[Math.floor(array.length / 2)]);
   }
   return newArray;
 };
-console.log(middle([1, 2, 3, 4, 5, 6, 7, 8, 9]));// => [5]
-console.log(middle([1, 2, 3, 4, 5, 6, 7, 8]));// => [4, 5]
-console.log(middle([1, 2]));// => []
-console.log(middle([1]));// => []
+console.log(middle(["a", "b", "c", "d", "e"]));// => ["c"]
+console.log(middle(["a", "b", "c", "d", "e", "f"]));// => ["c", "d"]
+console.log(middle(["a", "b"]));// => []
+console.log(middle(["a"]));// => []
 
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8, 9]), [5]);// => true
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8]), [4, 5]);// => true
-assertArraysEqual(middle([1, 2]), []);// => true
-assertArraysEqual(middle([1]), []);// => true
-console.log(eqArrays(middle([1, 2, 3, 4, 5, 6, 7, 8, 9]), [5]));// => true
-console.log(eqArrays(middle([1, 2, 3, 4, 5, 6, 7, 8]), [4, 5]));// => true
-console.log(eqArrays(middle([1, 2]), []));// => true
-console.log(eqArrays(middle([1]), []));// => true
+assertArraysEqual(middle(["a", "b", "c", "d", "e"]), ["c"]);// => ["c"]
+assertArraysEqual(middle(["a", "b", "c", "d", "e", "f"]), ["c", "d"]);
+assertArraysEqual(middle(["a", "b"]), []);
+assertArraysEqual(middle(["a"]), []);
