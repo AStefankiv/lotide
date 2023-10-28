@@ -1,3 +1,14 @@
+const { assert } = require("console");
+
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
+
 const letterPositions = function(sentence) {
   const results = {};
   sentence = sentence.split(" ").join("");
@@ -13,4 +24,7 @@ const letterPositions = function(sentence) {
   }
   return results;
 };
-console.log(letterPositions("hello"));
+console.log(letterPositions("lighthouse in the house"));
+assertEqual(letterPositions("lighthouse in the house")["l"], [0]);
+assertEqual(letterPositions("lighthouse in the house")["i"], [1, 11]);
+assertEqual(letterPositions("lighthouse in the house")["g"], [2]);
