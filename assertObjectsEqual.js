@@ -1,5 +1,3 @@
-const exp = require('constants');
-
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -14,8 +12,8 @@ const eqArrays = function(array1, array2) {
 
 
 const eqObjects = function(object1, object2) {
-  let keys1 = Object.keys(object1);
-  let keys2 = Object.keys(object2);
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
 
   if (keys1.length !== keys2.length) {
     return false;
@@ -56,4 +54,21 @@ let object2 = {
   b: 2,
   c: 3
 };
-assertObjectsEqual(object1, object2);
+
+let object3 = {
+  a: 1,
+  b: 2,
+  c: 4
+};
+
+let object4 = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4
+};
+
+
+assertObjectsEqual(object1, object2);// => true
+assertObjectsEqual(object1, object3);// => false
+assertObjectsEqual(object1, object4);// => false
