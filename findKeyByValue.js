@@ -12,7 +12,7 @@ const findKeyByValue = function(object, value) {
       return i;
     }
   }
-}
+};
 
 
 const bestTVShowsByGenre = {
