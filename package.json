@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@andriis_stefankiv/lotide",
+  "version": "1.0.1",
+  "description": "My own implementation of Lodash library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,11 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/AStefankiv/lotide.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["lighthouse", "labs", "lotide", "assertArraysEqual", "assertEqual", "assertObjectsEqual", "countLetters", "countOnly", "eqArrays", "eqObjects", "findKey", "findKeyByValue", "flatten", "head", "letterPositions", "map", "middle", "tail", "takeUntil", "without"],
+  "author": "Andrii Stefankiv",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AStefankiv/lotide/issues"
+    "url": "https://github.com/AStefankiv/lotide/issues",
+    "email": "stefankif35@gmail.com"
   },
   "homepage": "https://github.com/AStefankiv/lotide#readme",
   "devDependencies": {
