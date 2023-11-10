@@ -72,3 +72,5 @@ let object4 = {
 assertObjectsEqual(object1, object2);// => true
 assertObjectsEqual(object1, object3);// => false
 assertObjectsEqual(object1, object4);// => false
+
+module.exports = assertObjectsEqual;

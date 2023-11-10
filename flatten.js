@@ -47,3 +47,6 @@ function flatten (array) {
   return newArray;
 }
 console.log(flatten(newNumberArray));
+
+
+module.exports = flatten;

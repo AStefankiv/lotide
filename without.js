@@ -22,7 +22,7 @@ const assertArraysEqual = function(array1, array2) {
 // assertArraysEqual(["1", "2"], ["1", "2", "3"]);// => true
 
 
-function without (source, itemsToRemove) {
+const without = (source, itemsToRemove) => {
   let newArray = [];
   for (let i = 0; i < source.length; i += 1) {
     if (!itemsToRemove.includes(source[i])) {
@@ -30,7 +30,7 @@ function without (source, itemsToRemove) {
     }
   }
   return newArray;
-}
+};
 
 let array123 = [1, 2, 3];
 console.log(without(array123, [1]));
@@ -38,3 +38,7 @@ let array123String = ["1", "2", "3"];
 console.log(without(array123String, [1, "2"]));
 
 assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);// => true
+
+
+
+module.exports = without;
