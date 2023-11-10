@@ -1,5 +1,6 @@
 const tail = require('../tail');
 const assert = require('chai').assert;
+const assertArraysEqual = require('../assertArraysEqual');
 
 
 describe("#tail", () => {
@@ -13,5 +14,11 @@ describe("#tail", () => {
 
   it("returns 'Labs' for ['Hello', 'Lighthouse', 'Labs']", () => {
     assert.strictEqual(tail(['Hello', 'Lighthouse', 'Labs'])[1], 'Labs');
+  });
+
+  it("check if array length is not modified", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.strictEqual(words.length, 3);
   });
 });
