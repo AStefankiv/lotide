@@ -1,7 +1,5 @@
 const tail = require('../tail');
 const assert = require('chai').assert;
-const assertArraysEqual = require('../assertArraysEqual');
-
 
 describe("#tail", () => {
   it("returns 2 for [1, 2, 3]", () => {

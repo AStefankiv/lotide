@@ -7,6 +7,7 @@ const assertEqual = require('./assertEqual');
 //     }
 //   }
 // };
+// This is the same as above, but using a for...in loop instead of Object.keys():
 
 const findKeyByValue = function(object, value) {
   for (let i in object) {
