@@ -1,8 +1,3 @@
-const eqArrays = require('./eqArrays');
-const assertArraysEqual = require('./assertArraysEqual');
-
-
-
 const middle = function(array) {
   let newArray = [];
   if (array.length <= 2) {
@@ -16,14 +11,7 @@ const middle = function(array) {
   }
   return newArray;
 };
-// console.log(middle([1, 2, 3, 4, 5, 6]));// => [3, 4]
-// console.log(middle([1, 2, 3, 4, 5]));// => [3]
+
 
 
 module.exports = middle;
-
-module.exports = {
-  middle,
-  assertArraysEqual,
-  eqArrays
-};

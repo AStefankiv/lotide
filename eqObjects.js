@@ -1,8 +1,7 @@
-const assertEqual = require('./assertEqual');
 const eqArrays = require('./eqArrays');
 
 
-const eqObjects = function(object1, object2) {
+const eqObjectsRecursion = function(object1, object2) {
   let keys1 = Object.keys(object1);
   let keys2 = Object.keys(object2);
 
@@ -11,7 +10,11 @@ const eqObjects = function(object1, object2) {
   }
 
   for (let i of keys1) {
-    if (Array.isArray(object1[i])) {
+    if (typeof object1[i] === "object" && !Array.isArray(object1[i])) {
+      if (!eqObjectsRecursion(object1[i], object2[i])) {
+        return false;
+      }
+    } else if (Array.isArray(object1[i])) {
       if (!eqArrays(object1[i], object2[i])) {
         return false;
       }
@@ -25,27 +28,10 @@ const eqObjects = function(object1, object2) {
 };
 
 
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-console.log(eqObjects(shirtObject , anotherShirtObject)); // => true
-assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
+console.log(eqObjectsRecursion({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }));// => true
+
+console.log(eqObjectsRecursion({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }));// => false
+console.log(eqObjectsRecursion({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }));// => false
 
 
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-console.log(eqObjects(shirtObject , longSleeveShirtObject)); // => false
-assertEqual(eqObjects(anotherShirtObject, longSleeveShirtObject), false);
-
-console.log(eqObjects(shirtObject, anotherShirtObject));
-
-
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject)); // => true
-
-const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-console.log(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject)); // => false
-
-console.log(eqObjects(multiColorShirtObject.colors, longSleeveMultiColorShirtObject.colors));
-
-
-module.exports = eqObjects;
+module.exports = eqObjectsRecursion;

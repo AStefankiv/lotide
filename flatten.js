@@ -3,14 +3,6 @@ const assertArraysEqual = require('./assertArraysEqual');
 
 
 
-// let newNumberArray = [1, 2, [3, 4, 5], 6, [7, 8, 9]];
-
-// function flatten (array) {
-//   let newArray = [].concat(...array);
-//   return newArray;
-// }
-// This is the same as above, but using a different method. It's also the same as the function below:
-
 
 let newNumberArray = [1, 2, [3, 4, 5], 6, [7, 8, 9]];
 const flatten = (array) => {

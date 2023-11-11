@@ -1,6 +1,4 @@
-const eqArrays = require('./eqArrays');
 const assertArraysEqual = require('./assertArraysEqual');
-
 
 
 
@@ -20,3 +18,6 @@ console.log(results1);
 assertArraysEqual((results1), [ 'g', 'c', 't', 'm', 't' ]);// => true
 assertArraysEqual((results1), [ 'g', 'c', 'm', 'm', 't' ]);// => false
 assertArraysEqual((results1), [ 'g', 'c', 'm']);// => false
+
+
+module.exports = map;
